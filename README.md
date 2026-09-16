@@ -3,16 +3,22 @@
 Marketing website for **Creations**, a flower, decor, event styling, hiring and catering
 company based in Wellington, Western Cape, South Africa.
 
-The site is a single, dependency-free static page. There is no build step: upload the
-files to any static host (GitHub Pages, Netlify, Vercel, cPanel, Afrihost, etc.) and it works.
+The site is a dependency-free static site: a homepage plus a contact page. There is no build
+step: upload the files to any static host (GitHub Pages, Netlify, Vercel, cPanel, Afrihost, etc.)
+and it works.
+
+Homepage sections, in order: Hero, Trust Banner, About Creations, Services Overview,
+Featured Gallery (masonry), Testimonials, CTA, Footer. Every "Request a Quote" button leads
+to `contact.html`, which holds the enquiry form, contact details and the Google Maps embed.
 
 ## Structure
 
 ```
-index.html              The page (semantic HTML, JSON-LD structured data, meta/OG tags)
+index.html              Homepage (semantic HTML, JSON-LD structured data, meta/OG tags)
+contact.html            Request a Quote page: enquiry form, contact card, Google Maps embed
 assets/css/styles.css   Design system + all styles (mobile first, brand tokens at the top)
-assets/js/main.js       Navigation, scroll reveal, gallery filters + lightbox, testimonial
-                        slider, form validation/submission, WhatsApp fallback
+assets/js/main.js       Navigation, scroll reveal, gallery lightbox, form validation and
+                        submission, WhatsApp fallback
 assets/img/             Logo (SVG recreations of the brand lily + wordmark), fallback art,
                         Open Graph share image
 favicon.svg, site.webmanifest, robots.txt, sitemap.xml
@@ -23,14 +29,14 @@ favicon.svg, site.webmanifest, robots.txt, sitemap.xml
 | Item | Where | Notes |
 | --- | --- | --- |
 | **Photos** | `index.html` (`images.unsplash.com` URLs) | Stock placeholders. Replace with Creations' own portfolio photos, keeping the `alt` text descriptive. If a photo fails to load the on-brand lily artwork is shown instead. |
-| **Contact form endpoint** | `index.html`, form `action="https://formspree.io/f/YOUR_FORM_ID"` | Create a free form at formspree.io (or any endpoint that accepts a POST and returns JSON) and paste the ID. Until then, submitting the form opens WhatsApp with the enquiry pre-filled. |
+| **Contact form endpoint** | `contact.html`, form `action="https://formspree.io/f/YOUR_FORM_ID"` | Create a free form at formspree.io (or any endpoint that accepts a POST and returns JSON) and paste the ID. Until then, submitting the form opens WhatsApp with the enquiry pre-filled. |
 | **Phone / WhatsApp** | `083 991 7808` and `wa.me/27839917808` | Taken from the business card. Change in `index.html` and `WHATSAPP` in `main.js` if needed. |
 | **Facebook page** | `facebook.com/creationscreated` | From the business card handle. |
 | **Email address** | Not shown | The card lists no email, so none is published. Add one in the contact card and footer if wanted. |
 | **Domain** | `https://www.obcreations.site/` | Used for canonical, Open Graph, sitemap and structured data. Update if the domain changes. |
 | **Address / map** | Contact section, JSON-LD `geo` | Currently centred on Wellington town. Replace the map `src` with the exact Google Maps embed for the studio if desired. |
 | **Opening hours** | Contact section + JSON-LD | Placeholder hours (Mon–Fri 08:30–17:00, Sat 09:00–13:00). |
-| **Stats** | Trust bar (`850+ celebrations`) | Adjust the figure to Creations' real number. |
+| **About photo** | `index.html`, About section | The framed image is a placeholder (the lily artwork). Replace its `src` with a warm, professional photo of the family and team, and update the caption. |
 | **Testimonials** | Testimonials section | Written to brief. Swap for genuine client quotes. |
 
 ## Design
@@ -42,8 +48,8 @@ favicon.svg, site.webmanifest, robots.txt, sitemap.xml
 
 ## Accessibility & performance notes
 
-- Skip link, landmark regions, one `h1`, logical heading order, labelled controls,
-  keyboard-operable menu, gallery lightbox (focus-trapped, Escape/arrow keys) and slider.
+- Skip link, landmark regions, one `h1` per page, logical heading order, labelled controls,
+  keyboard-operable menu and gallery lightbox (focus-trapped, Escape/arrow keys).
 - Colour contrast meets WCAG AA for text on all backgrounds used.
 - Hero image is preloaded with `fetchpriority="high"`; every other image and the map are lazy-loaded.
 - No frameworks or third-party scripts; one CSS file and one JS file.

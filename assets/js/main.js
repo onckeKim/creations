@@ -59,8 +59,8 @@
   }
 
   /* ---------- Active nav link on scroll ---------------------------- */
-  var navLinks = $$('.nav__link');
-  var sections = navLinks.map(function (a) { return $(a.getAttribute('href')); }).filter(Boolean);
+  var navLinks = $$('.nav__link').filter(function (a) { return /^#./.test(a.getAttribute('href')); });
+  var sections = navLinks.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);
   if ('IntersectionObserver' in window && sections.length) {
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -109,28 +109,6 @@
     counters.forEach(function (c) { cio.observe(c); });
   }
 
-  /* ---------- Gallery filters -------------------------------------- */
-  var chips = $$('.chip[data-filter]');
-  var items = $$('.gallery__item');
-  var emptyMsg = $('.gallery__empty');
-  chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      var f = chip.dataset.filter;
-      chips.forEach(function (c) {
-        var on = c === chip;
-        c.classList.toggle('is-active', on);
-        c.setAttribute('aria-pressed', String(on));
-      });
-      var shown = 0;
-      items.forEach(function (item) {
-        var show = f === 'all' || item.dataset.category === f;
-        item.classList.toggle('is-hidden', !show);
-        if (show) shown++;
-      });
-      if (emptyMsg) emptyMsg.hidden = shown > 0;
-    });
-  });
-
   /* ---------- Lightbox --------------------------------------------- */
   var lightbox = $('#lightbox');
   if (lightbox) {
@@ -143,7 +121,7 @@
     var current = -1, lastFocus = null;
 
     function visibleTriggers() {
-      return triggers.filter(function (t) { return !t.closest('.gallery__item').classList.contains('is-hidden'); });
+      return triggers.filter(function (t) { var item = t.closest('.masonry__item'); return !item || !item.classList.contains('is-hidden'); });
     }
     function show(index) {
       var list = visibleTriggers();
@@ -200,61 +178,6 @@
       startX = null;
     }, { passive: true });
   }
-
-  /* ---------- Testimonial slider ----------------------------------- */
-  $$('[data-slider]').forEach(function (slider) {
-    var track = $('.slider__track', slider);
-    var slides = $$('.slide', slider);
-    var dotsWrap = $('.slider__dots', slider);
-    var prev = $('[data-prev]', slider), next = $('[data-next]', slider);
-    var index = 0, timer = null, n = slides.length;
-    if (!n) return;
-
-    slides.forEach(function (s, i) {
-      s.setAttribute('role', 'group');
-      s.setAttribute('aria-label', (i + 1) + ' of ' + n);
-      var dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'slider__dot';
-      dot.setAttribute('role', 'tab');
-      dot.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
-      dot.addEventListener('click', function () { go(i); restart(); });
-      dotsWrap.appendChild(dot);
-    });
-    var dots = $$('.slider__dot', dotsWrap);
-
-    function go(i) {
-      index = (i + n) % n;
-      track.style.transform = 'translateX(-' + index * 100 + '%)';
-      slides.forEach(function (s, k) { s.setAttribute('aria-hidden', String(k !== index)); });
-      dots.forEach(function (d, k) { d.setAttribute('aria-selected', String(k === index)); d.tabIndex = k === index ? 0 : -1; });
-    }
-    function start() { if (!prefersReducedMotion) timer = setInterval(function () { go(index + 1); }, 7000); }
-    function stop() { clearInterval(timer); timer = null; }
-    function restart() { stop(); start(); }
-
-    prev.addEventListener('click', function () { go(index - 1); restart(); });
-    next.addEventListener('click', function () { go(index + 1); restart(); });
-    slider.addEventListener('mouseenter', stop);
-    slider.addEventListener('mouseleave', start);
-    slider.addEventListener('focusin', stop);
-    slider.addEventListener('focusout', function (e) { if (!slider.contains(e.relatedTarget)) start(); });
-    slider.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft') { go(index - 1); dots[index].focus(); restart(); }
-      if (e.key === 'ArrowRight') { go(index + 1); dots[index].focus(); restart(); }
-    });
-    document.addEventListener('visibilitychange', function () { document.hidden ? stop() : (timer || start()); });
-
-    var sx = null;
-    track.addEventListener('touchstart', function (e) { sx = e.changedTouches[0].clientX; stop(); }, { passive: true });
-    track.addEventListener('touchend', function (e) {
-      if (sx !== null) { var dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) go(dx > 0 ? index - 1 : index + 1); }
-      sx = null; start();
-    }, { passive: true });
-
-    go(0);
-    start();
-  });
 
   /* ---------- Enquiry form ----------------------------------------- */
   var form = $('#enquiry-form');
