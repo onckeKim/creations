@@ -241,6 +241,7 @@
         if (input.type === 'checkbox') { if (!input.checked) msg = 'Please tick this box so we may contact you.'; }
         else if (!input.value.trim()) msg = 'This field is required.';
         else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim())) msg = 'Please enter a valid email address.';
+        else if (input.type === 'tel' && input.value.replace(/\D/g, '').length < 9) msg = 'Please enter a valid phone number.';
         setError(input, msg);
         if (msg) { ok = false; firstBad = firstBad || input; }
       });
@@ -256,6 +257,7 @@
       if (input.type === 'checkbox') { if (!input.checked) msg = 'Please tick this box so we may contact you.'; }
       else if (!input.value.trim()) msg = 'This field is required.';
       else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim())) msg = 'Please enter a valid email address.';
+      else if (input.type === 'tel' && input.value.replace(/\D/g, '').length < 9) msg = 'Please enter a valid phone number.';
       setError(input, msg);
     }
 
@@ -307,6 +309,16 @@
         .finally(function () { btn.disabled = false; btn.textContent = 'Send Enquiry'; });
     });
   }
+
+  /* ---------- FAQ accordion: one item open at a time ---------------- */
+  $$('[data-accordion]').forEach(function (acc) {
+    var items = $$('details', acc);
+    items.forEach(function (d) {
+      d.addEventListener('toggle', function () {
+        if (d.open) items.forEach(function (o) { if (o !== d) o.open = false; });
+      });
+    });
+  });
 
   /* ---------- Misc --------------------------------------------------- */
   var year = $('[data-year]');
