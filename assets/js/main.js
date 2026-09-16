@@ -21,7 +21,7 @@
       var picture = img.closest('picture');
       if (picture) $$('source', picture).forEach(function (s) { s.remove(); });
       img.removeAttribute('srcset');
-      img.src = '/assets/img/placeholder.svg';
+      img.src = 'assets/img/placeholder.svg';
     });
     if (img.complete && img.naturalWidth === 0 && img.src) img.dispatchEvent(new Event('error'));
   });
@@ -150,7 +150,7 @@
     triggers.forEach(function (t) {
       t.addEventListener('click', function () { open(visibleTriggers().indexOf(t)); });
     });
-    lbImg.addEventListener('error', function () { if (lbImg.src && !/placeholder/.test(lbImg.src)) lbImg.src = '/assets/img/placeholder.svg'; });
+    lbImg.addEventListener('error', function () { if (lbImg.src && !/placeholder/.test(lbImg.src)) lbImg.src = 'assets/img/placeholder.svg'; });
     lbClose.addEventListener('click', close);
     lbPrev.addEventListener('click', function () { show(current - 1); });
     lbNext.addEventListener('click', function () { show(current + 1); });

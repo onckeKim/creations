@@ -2,12 +2,12 @@
   "name": "Creations | Creating Beautiful Celebrations",
   "short_name": "Creations",
   "description": "Flowers, decor, event styling, hiring and catering in Wellington, Western Cape.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "browser",
   "background_color": "#FAF6EF",
   "theme_color": "#FAF6EF",
   "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "/assets/img/logo-mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/img/logo-mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
   ]
 }

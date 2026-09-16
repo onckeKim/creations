@@ -54,6 +54,12 @@ favicon.svg, site.webmanifest, robots.txt, sitemap.xml
 - Hero image is preloaded with `fetchpriority="high"`; every other image and the map are lazy-loaded.
 - No frameworks or third-party scripts; one CSS file and one JS file.
 
+## GitHub Pages
+
+Every push to `main` deploys the site with the workflow in `.github/workflows/pages.yml`.
+The preview is served at `https://onckekim.github.io/creations/`. All internal links are
+relative, so the same files work at that sub-path and on the real domain.
+
 ## Local preview
 
 Any static server works, for example:
