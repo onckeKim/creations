@@ -3,7 +3,7 @@
 Marketing website for **Creations**, a flower, decor, event styling, hiring and catering
 company based in Wellington, Western Cape, South Africa.
 
-The site is a dependency-free static site: a homepage plus a contact page. There is no build
+The site is a dependency-free static site: a homepage, a services page and a contact page. There is no build
 step: upload the files to any static host (GitHub Pages, Netlify, Vercel, cPanel, Afrihost, etc.)
 and it works.
 
@@ -15,6 +15,7 @@ to `contact.html`, which holds the enquiry form, contact details and the Google 
 
 ```
 index.html              Homepage (semantic HTML, JSON-LD structured data, meta/OG tags)
+services.html           Services page: six services, each with image, description, key features and CTA
 contact.html            Request a Quote page: enquiry form, contact card, Google Maps embed
 assets/css/styles.css   Design system + all styles (mobile first, brand tokens at the top)
 assets/js/main.js       Navigation, scroll reveal, gallery lightbox, form validation and
