@@ -18,7 +18,7 @@ index.html              Homepage (semantic HTML, JSON-LD structured data, meta/O
 about.html              About page: story, mission, why choose us, process, experience, local area
 services.html           Services page: six services, each with image, description, key features and CTA
 gallery.html            Gallery page: filterable masonry by category, lightbox with swipe, enquiry CTA
-contact.html            Request a Quote page: enquiry form, contact card, Google Maps embed
+contact.html            Contact page: details + WhatsApp, quote request form, Google Maps, FAQ, CTA
 assets/css/styles.css   Design system + all styles (mobile first, brand tokens at the top)
 assets/js/main.js       Navigation, scroll reveal, gallery lightbox, form validation and
                         submission, WhatsApp fallback
