@@ -3,7 +3,7 @@
 Marketing website for **Creations**, a flower, decor, event styling, hiring and catering
 company based in Wellington, Western Cape, South Africa.
 
-The site is a dependency-free static site: a homepage, a services page, a gallery page and a contact page. There is no build
+The site is a dependency-free static site: a homepage plus About, Services, Gallery and Contact pages. There is no build
 step: upload the files to any static host (GitHub Pages, Netlify, Vercel, cPanel, Afrihost, etc.)
 and it works.
 
@@ -15,6 +15,7 @@ to `contact.html`, which holds the enquiry form, contact details and the Google 
 
 ```
 index.html              Homepage (semantic HTML, JSON-LD structured data, meta/OG tags)
+about.html              About page: story, mission, why choose us, process, experience, local area
 services.html           Services page: six services, each with image, description, key features and CTA
 gallery.html            Gallery page: filterable masonry by category, lightbox with swipe, enquiry CTA
 contact.html            Request a Quote page: enquiry form, contact card, Google Maps embed
@@ -38,7 +39,7 @@ favicon.svg, site.webmanifest, robots.txt, sitemap.xml
 | **Domain** | `https://www.obcreations.site/` | Used for canonical, Open Graph, sitemap and structured data. Update if the domain changes. |
 | **Address / map** | Contact section, JSON-LD `geo` | Currently centred on Wellington town. Replace the map `src` with the exact Google Maps embed for the studio if desired. |
 | **Opening hours** | Contact section + JSON-LD | Placeholder hours (Mon–Fri 08:30–17:00, Sat 09:00–13:00). |
-| **About photo** | `index.html`, About section | The framed image is a placeholder (the lily artwork). Replace its `src` with a warm, professional photo of the family and team, and update the caption. |
+| **About photo** | `index.html` and `about.html`, About/Our Story sections | The framed image is a placeholder (the lily artwork). Replace its `src` with a warm, professional photo of the family and team, and update the caption. |
 | **Testimonials** | Testimonials section | Written to brief. Swap for genuine client quotes. |
 
 ## Design
