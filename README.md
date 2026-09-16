@@ -3,7 +3,7 @@
 Marketing website for **Creations**, a flower, decor, event styling, hiring and catering
 company based in Wellington, Western Cape, South Africa.
 
-The site is a dependency-free static site: a homepage, a services page and a contact page. There is no build
+The site is a dependency-free static site: a homepage, a services page, a gallery page and a contact page. There is no build
 step: upload the files to any static host (GitHub Pages, Netlify, Vercel, cPanel, Afrihost, etc.)
 and it works.
 
@@ -16,6 +16,7 @@ to `contact.html`, which holds the enquiry form, contact details and the Google 
 ```
 index.html              Homepage (semantic HTML, JSON-LD structured data, meta/OG tags)
 services.html           Services page: six services, each with image, description, key features and CTA
+gallery.html            Gallery page: filterable masonry by category, lightbox with swipe, enquiry CTA
 contact.html            Request a Quote page: enquiry form, contact card, Google Maps embed
 assets/css/styles.css   Design system + all styles (mobile first, brand tokens at the top)
 assets/js/main.js       Navigation, scroll reveal, gallery lightbox, form validation and
@@ -29,7 +30,7 @@ favicon.svg, site.webmanifest, robots.txt, sitemap.xml
 
 | Item | Where | Notes |
 | --- | --- | --- |
-| **Photos** | `index.html` (`images.unsplash.com` URLs) | Stock placeholders. Replace with Creations' own portfolio photos, keeping the `alt` text descriptive. If a photo fails to load the on-brand lily artwork is shown instead. |
+| **Photos** | `index.html`, `gallery.html`, `services.html` (`images.unsplash.com` URLs) | Stock placeholders. Real photos go in the gallery: add a `masonry__item` card in `gallery.html` with the right `data-category`. Replace with Creations' own portfolio photos, keeping the `alt` text descriptive. If a photo fails to load the on-brand lily artwork is shown instead. |
 | **Contact form endpoint** | `contact.html`, form `action="https://formspree.io/f/YOUR_FORM_ID"` | Create a free form at formspree.io (or any endpoint that accepts a POST and returns JSON) and paste the ID. Until then, submitting the form opens WhatsApp with the enquiry pre-filled. |
 | **Phone / WhatsApp** | `083 991 7808` and `wa.me/27839917808` | Taken from the business card. Change in `index.html` and `WHATSAPP` in `main.js` if needed. |
 | **Facebook page** | `facebook.com/creationscreated` | From the business card handle. |
