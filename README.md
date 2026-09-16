@@ -63,6 +63,11 @@ Every push to `main` deploys the site with the workflow in `.github/workflows/pa
 The preview is served at `https://onckekim.github.io/creations/`. All internal links are
 relative, so the same files work at that sub-path and on the real domain.
 
+## SEO
+
+See `docs/SEO.md` for the local SEO setup: titles, descriptions, schema, heading hierarchy,
+alt text rules, internal linking and Google Business Profile recommendations.
+
 ## Local preview
 
 Any static server works, for example:

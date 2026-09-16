@@ -661,6 +661,27 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .faq__item[open] .faq__a { animation: faqIn 0.4s var(--ease); }
 @keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 
+/* ---------- SEO helpers: breadcrumb, footer links, local block ------- */
+.breadcrumb { background: var(--white); border-bottom: 1px solid var(--line); }
+.breadcrumb__list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; padding-block: 0.8rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mute); }
+.breadcrumb__list li + li::before { content: "/"; margin-right: 0.5rem; color: var(--line); }
+.breadcrumb__list a { color: var(--ink-soft); }
+.breadcrumb__list a:hover { color: var(--terracotta); }
+.breadcrumb__list [aria-current] { color: var(--terracotta); }
+.footer__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; padding-block: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.82rem; }
+.footer__links a { color: rgba(255,255,255,0.6); }
+.footer__links a:hover { color: var(--sage); }
+.local-seo { background: var(--white); }
+.local-seo__grid { display: grid; gap: 2.5rem; align-items: start; }
+.local-seo .section__title { text-align: left; }
+.local-seo p { color: var(--ink-soft); }
+.local-seo__list { list-style: none; display: grid; gap: 0.6rem; background: var(--sage-tint); border: 1px solid rgba(157,194,125,0.3); border-radius: var(--radius-lg); padding: 1.75rem; }
+.local-seo__list li { position: relative; padding-left: 1.6rem; }
+.local-seo__list li::before { content: ""; position: absolute; left: 0; top: 0.65rem; width: 0.7rem; height: 1px; background: var(--terracotta); }
+.local-seo__list a { color: var(--ink); font-weight: 400; }
+.local-seo__list a:hover { color: var(--terracotta); }
+@media (min-width: 900px) { .local-seo__grid { grid-template-columns: 1.4fr 1fr; gap: clamp(3rem, 6vw, 5rem); } }
+
 /* ---------- CTA banner ---------------------------------------------- */
 .cta { padding-block: clamp(3rem, 6vw, 4.5rem); background: var(--cream); }
 .cta__inner {
