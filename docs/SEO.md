@@ -36,11 +36,11 @@ Under about 155 characters, include the keyword, the location and a reason to cl
 
 | Page | Description |
 | --- | --- |
-| Home | Creations is a trusted decor company in Wellington, Western Cape. Wedding decor, event styling, party decor, matric ball decor and catering services with 10+ years of experience. |
-| About | Meet Creations, a family-owned decor company in Wellington trusted for 10+ years. Wedding styling, event decor, party decor and catering across the Western Cape. |
-| Services | Wedding decor, party decor, matric ball decor, confirmation and corporate event styling plus catering services in Wellington and the Western Cape. Request a quote. |
+| Home | Trusted decor company in Wellington, Western Cape. Wedding decor, event styling, party decor, matric ball decor and catering with 10+ years of experience. |
+| About | Meet Creations, a family-owned decor company in Wellington trusted for 10+ years. Wedding styling, event decor, party decor and catering, Western Cape. |
+| Services | Wedding decor, party decor, matric ball decor, corporate event styling and catering services in Wellington and the Western Cape. Request a quote today. |
 | Gallery | See wedding decor, party decor, matric ball decor, corporate event styling and catering by Creations, Wellington. Browse by category and request a quote. |
-| Contact | Request a quote for wedding decor, event styling, party decor or catering services in Wellington, Western Cape. Call 083 991 7808 or message Creations on WhatsApp. |
+| Contact | Request a quote for wedding decor, event styling, party decor or catering in Wellington, Western Cape. Call 083 991 7808 or message us on WhatsApp. |
 
 ## 3. Open Graph and Twitter tags
 
