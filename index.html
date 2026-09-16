@@ -104,9 +104,9 @@
 
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#about">About</a></li>
-          <li><a class="nav__link" href="#services">Services</a></li>
-          <li><a class="nav__link" href="#gallery">Gallery</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="services.html">Services</a></li>
+          <li><a class="nav__link" href="gallery.html">Gallery</a></li>
           <li><a class="nav__link" href="#testimonials">Testimonials</a></li>
           <li><a class="nav__link" href="contact.html">Contact</a></li>
         </ul>
@@ -137,7 +137,7 @@
         <h1 class="hero__title reveal" id="hero-title">Creating <em>Beautiful</em> Celebrations for Over 10 Years</h1>
         <p class="hero__lead reveal">Elegant decor, event styling and catering services for weddings, parties and special occasions throughout Wellington and surrounding areas.</p>
         <div class="hero__actions reveal">
-          <a class="btn btn--ghost btn--lg" href="#gallery">View Our Work</a>
+          <a class="btn btn--ghost btn--lg" href="gallery.html">View Our Work</a>
           <a class="btn btn--primary btn--lg" href="contact.html">Request a Quote</a>
         </div>
       </div>
@@ -217,7 +217,10 @@
             </li>
           </ul>
 
-          <a class="btn btn--outline reveal" href="#services">Explore Our Services</a>
+          <div class="about__actions reveal">
+            <a class="btn btn--primary" href="about.html">Read Our Story</a>
+            <a class="btn btn--outline" href="services.html">Explore Our Services</a>
+          </div>
         </div>
       </div>
     </section>
@@ -236,41 +239,44 @@
             <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 14a4 4 0 1 0 8 0 4 4 0 1 0-8 0Z"/><path d="M12 10V4M9 6l3-2 3 2"/><path d="M4 20h16"/></svg></span>
             <h3 class="service__title">Wedding Decor</h3>
             <p>Romantic, elegant styling for ceremonies and receptions, from draping and florals to tablescapes, lighting and the finest finishing details.</p>
-            <a class="service__link" href="contact.html">Enquire about weddings</a>
+            <a class="service__link" href="services.html#wedding-decor">Learn more</a>
           </li>
           <li class="service reveal">
             <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c-2.5 0-4 2-4 4.5S9.5 13 12 13s4-3 4-5.5S14.5 3 12 3Z"/><path d="M12 13v8M9 21h6"/><path d="M6.5 6.5 5 5M17.5 6.5 19 5"/></svg></span>
             <h3 class="service__title">Kiddies Parties</h3>
             <p>Playful themes brought to life with colour, character and care. Balloon styling, themed tables and treats little guests will never forget.</p>
-            <a class="service__link" href="contact.html">Plan a kiddies party</a>
+            <a class="service__link" href="services.html#kiddies-party-decor">Learn more</a>
           </li>
           <li class="service reveal">
             <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 4.6 5 .6-3.7 3.4 1 5L12 14.2l-4.4 2.4 1-5L4.9 8.2l5-.6Z"/><path d="M12 17v4"/></svg></span>
             <h3 class="service__title">Matric Balls</h3>
             <p>Sophisticated, show-stopping decor for the night of a lifetime. Grand entrances, statement centrepieces and photo-ready moments.</p>
-            <a class="service__link" href="contact.html">Style your matric ball</a>
+            <a class="service__link" href="services.html#matric-balls">Learn more</a>
           </li>
           <li class="service reveal">
             <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 8h10"/><path d="M5 21h14"/></svg></span>
             <h3 class="service__title">Confirmations</h3>
             <p>Graceful, understated styling for meaningful family milestones, with soft palettes, fresh florals and beautifully catered tables.</p>
-            <a class="service__link" href="contact.html">Celebrate a confirmation</a>
+            <a class="service__link" href="services.html#confirmations">Learn more</a>
           </li>
           <li class="service reveal">
             <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5M9 11h.01M15 11h.01M12 11h.01"/></svg></span>
             <h3 class="service__title">Corporate Events</h3>
             <p>Polished, on-brand experiences for year-end functions, launches, conferences and client dinners, delivered with total professionalism.</p>
-            <a class="service__link" href="contact.html">Book a corporate event</a>
+            <a class="service__link" href="services.html#corporate-events">Learn more</a>
           </li>
           <li class="service reveal">
             <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17h16"/><path d="M5 17a7 7 0 0 1 14 0"/><path d="M12 10V7"/><path d="M3 20h18"/></svg></span>
             <h3 class="service__title">Catering Services</h3>
             <p>Seasonal menus prepared with care: canap&eacute;s, plated dinners, harvest tables, high teas and sweet treats to complement your styling.</p>
-            <a class="service__link" href="contact.html">Request a menu</a>
+            <a class="service__link" href="services.html#catering-services">Learn more</a>
           </li>
         </ul>
 
         <p class="services__note reveal">Also available: baby showers, bridal showers, birthday celebrations and decor hire for any occasion.</p>
+        <div class="services__more reveal">
+          <a class="btn btn--outline" href="services.html">View All Services</a>
+        </div>
       </div>
     </section>
 
@@ -285,9 +291,9 @@
 
         <ul class="masonry">
           <li class="masonry__item reveal">
-            <button type="button" class="gallery__btn" data-lightbox aria-label="Open image: Winelands garden wedding reception">
-              <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=70" alt="Guests seated at a long wedding table under string lights in a Winelands garden" width="800" height="1000" loading="lazy" decoding="async" data-fallback>
-              <span class="gallery__caption"><span>Wedding</span>Winelands garden reception</span>
+            <button type="button" class="gallery__btn" data-lightbox aria-label="Open image: Dusty blue and eucalyptus tablescape">
+              <img src="assets/img/gallery-blue-goblet-tablescape.jpg" alt="A long wooden table styled with blue crystal goblets, beaded charger plates, floral napkins, eucalyptus and pillar candles, with white Chiavari chairs" width="1600" height="1200" loading="lazy" decoding="async" data-fallback>
+              <span class="gallery__caption"><span>Wedding</span>Dusty blue &amp; eucalyptus tablescape</span>
             </button>
           </li>
           <li class="masonry__item reveal">
@@ -321,15 +327,15 @@
             </button>
           </li>
           <li class="masonry__item reveal">
-            <button type="button" class="gallery__btn" data-lightbox aria-label="Open image: Corporate year-end function">
-              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=70" alt="Guests mingling at an elegantly lit corporate evening function" width="800" height="600" loading="lazy" decoding="async" data-fallback>
-              <span class="gallery__caption"><span>Corporate</span>Year-end celebration</span>
+            <button type="button" class="gallery__btn" data-lightbox aria-label="Open image: Long celebration table with pink sashes">
+              <img src="assets/img/gallery-long-table-pink-sashes.jpg" alt="A long wooden banquet table dressed with pink organza and white cross-back chairs tied with pink sashes, set beneath an arched doorway" width="1600" height="1067" loading="lazy" decoding="async" data-fallback>
+              <span class="gallery__caption"><span>Celebration</span>Long table under the arch</span>
             </button>
           </li>
           <li class="masonry__item reveal">
-            <button type="button" class="gallery__btn" data-lightbox aria-label="Open image: Confirmation high tea">
-              <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=800&q=70" alt="A soft pastel high tea setting with tiered stands and fresh flowers" width="800" height="900" loading="lazy" decoding="async" data-fallback>
-              <span class="gallery__caption"><span>Confirmation</span>Garden high tea</span>
+            <button type="button" class="gallery__btn" data-lightbox aria-label="Open image: Confirmation celebration table">
+              <img src="assets/img/gallery-confirmation-pink-table.jpg" alt="A confirmation celebration table with soft pink organza runner and chair sashes, a wooden cross favour, tall glass vases of roses and woven placemats" width="1600" height="1067" loading="lazy" decoding="async" data-fallback>
+              <span class="gallery__caption"><span>Confirmation</span>Blush pink celebration table</span>
             </button>
           </li>
           <li class="masonry__item reveal">
@@ -341,8 +347,11 @@
         </ul>
 
         <div class="gallery__more reveal">
-          <p>Follow us on Facebook for our latest celebrations, fresh flowers and behind-the-scenes moments.</p>
-          <a class="btn btn--outline" href="https://www.facebook.com/creationscreated" target="_blank" rel="noopener noreferrer">Follow us on Facebook</a>
+          <p>Explore the full gallery by category, or follow us on Facebook for our latest celebrations.</p>
+          <div class="gallery__actions">
+            <a class="btn btn--primary" href="gallery.html">View Full Gallery</a>
+            <a class="btn btn--outline" href="https://www.facebook.com/creationscreated" target="_blank" rel="noopener noreferrer">Follow us on Facebook</a>
+          </div>
         </div>
       </div>
     </section>

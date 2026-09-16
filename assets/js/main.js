@@ -109,11 +109,52 @@
     counters.forEach(function (c) { cio.observe(c); });
   }
 
+  /* ---------- Gallery filters -------------------------------------- */
+  var chips = $$('.chip[data-filter]');
+  var filterItems = $$('.masonry__item[data-category]');
+  var emptyMsg = $('.gallery__empty');
+  var countEl = $('[data-filter-count]');
+  function applyFilter(f) {
+    var shown = 0;
+    filterItems.forEach(function (item) {
+      var show = f === 'all' || item.dataset.category === f;
+      item.classList.toggle('is-hidden', !show);
+      if (show) {
+        shown++;
+        // restart the entrance animation so cards fade in on each filter change
+        item.style.animation = 'none';
+        void item.offsetWidth;
+        item.style.animation = '';
+        item.style.animationDelay = Math.min(shown * 40, 400) + 'ms';
+      }
+    });
+    if (emptyMsg) emptyMsg.hidden = shown > 0;
+    if (countEl) countEl.textContent = shown + (shown === 1 ? ' photo' : ' photos');
+  }
+  if (chips.length) {
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) {
+          var on = c === chip;
+          c.classList.toggle('is-active', on);
+          c.setAttribute('aria-pressed', String(on));
+        });
+        applyFilter(chip.dataset.filter);
+        if (history.replaceState) history.replaceState(null, '', chip.dataset.filter === 'all' ? location.pathname : '#' + chip.dataset.filter);
+      });
+    });
+    // Deep link: gallery.html#weddings opens that category
+    var initial = location.hash.replace('#', '');
+    var startChip = chips.filter(function (c) { return c.dataset.filter === initial; })[0];
+    if (startChip) startChip.click(); else applyFilter('all');
+  }
+
   /* ---------- Lightbox --------------------------------------------- */
   var lightbox = $('#lightbox');
   if (lightbox) {
     var lbImg = $('.lightbox__img', lightbox);
     var lbCap = $('.lightbox__caption', lightbox);
+    var lbCount = $('.lightbox__count', lightbox);
     var lbClose = $('.lightbox__close', lightbox);
     var lbPrev = $('.lightbox__nav--prev', lightbox);
     var lbNext = $('.lightbox__nav--next', lightbox);
@@ -129,9 +170,10 @@
       current = (index + list.length) % list.length;
       var btn = list[current], img = $('img', btn), cap = $('.gallery__caption', btn);
       var large = img.currentSrc || img.src;
-      lbImg.src = large.replace(/w=\d+/, 'w=1600');
+      lbImg.src = /images\.unsplash\.com/.test(large) ? large.replace(/w=\d+/, 'w=1600') : large;
       lbImg.alt = img.alt;
       lbCap.textContent = cap ? cap.textContent.replace(/\s+/g, ' ').trim() : '';
+      if (lbCount) lbCount.textContent = (current + 1) + ' / ' + list.length;
       lbPrev.hidden = lbNext.hidden = list.length < 2;
     }
     function open(index) {
