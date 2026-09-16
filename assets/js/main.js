@@ -129,7 +129,7 @@
       current = (index + list.length) % list.length;
       var btn = list[current], img = $('img', btn), cap = $('.gallery__caption', btn);
       var large = img.currentSrc || img.src;
-      lbImg.src = large.replace(/w=\d+/, 'w=1600');
+      lbImg.src = /images\.unsplash\.com/.test(large) ? large.replace(/w=\d+/, 'w=1600') : large;
       lbImg.alt = img.alt;
       lbCap.textContent = cap ? cap.textContent.replace(/\s+/g, ' ').trim() : '';
       lbPrev.hidden = lbNext.hidden = list.length < 2;
