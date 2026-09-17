@@ -62,7 +62,7 @@ To refresh how a page previews after editing, paste its URL into Facebook's Shar
 
 Validate after any edit at https://validator.schema.org and https://search.google.com/test/rich-results.
 
-Two values to confirm: the `foundingDate` of 2015 and the postal code 7655. Change them in `index.html` if they are wrong.
+The schema deliberately carries no founding date. The postal code 7655 is confirmed.
 
 Do not add `aggregateRating` markup unless the reviews are collected on the site itself and shown on the page. Google penalises self-declared ratings.
 
