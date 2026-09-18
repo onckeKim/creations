@@ -32,7 +32,7 @@ favicon.svg, site.webmanifest, robots.txt, sitemap.xml
 | Item | Where | Notes |
 | --- | --- | --- |
 | **Photos** | `index.html`, `gallery.html`, `services.html` (`images.unsplash.com` URLs) | Stock placeholders. Real photos go in the gallery: add a `masonry__item` card in `gallery.html` with the right `data-category`. Replace with Creations' own portfolio photos, keeping the `alt` text descriptive. If a photo fails to load the on-brand lily artwork is shown instead. |
-| **Contact form endpoint** | `contact.html`, form `action="https://formspree.io/f/YOUR_FORM_ID"` | Create a free form at formspree.io (or any endpoint that accepts a POST and returns JSON) and paste the ID. Until then, submitting the form opens WhatsApp with the enquiry pre-filled. |
+| **Contact form endpoint** | `contact.html`, form `action="https://formspree.io/f/mrpbbarl"` | Connected to Formspree. Submissions go to the email registered on that form; the first submission needs a one-time confirmation from Formspree. If the endpoint is ever replaced with a placeholder, the form falls back to opening WhatsApp. |
 | **Phone / WhatsApp** | `083 991 7808` and `wa.me/27839917808` | Taken from the business card. Change in `index.html` and `WHATSAPP` in `main.js` if needed. |
 | **Facebook page** | `facebook.com/creationscreated` | From the business card handle. |
 | **Email address** | Not shown | The card lists no email, so none is published. Add one in the contact card and footer if wanted. |
