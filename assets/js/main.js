@@ -172,7 +172,12 @@
       var large = img.currentSrc || img.src;
       lbImg.src = /images\.unsplash\.com/.test(large) ? large.replace(/w=\d+/, 'w=1600') : large;
       lbImg.alt = img.alt;
-      lbCap.textContent = cap ? cap.textContent.replace(/\s+/g, ' ').trim() : '';
+      if (cap) {
+        var tagEl = cap.querySelector('span');
+        var tag = tagEl ? tagEl.textContent.trim() : '';
+        var title = (tagEl ? cap.textContent.replace(tagEl.textContent, '') : cap.textContent).replace(/\s+/g, ' ').trim();
+        lbCap.textContent = tag ? title + ' \u00B7 ' + tag : title;
+      } else { lbCap.textContent = ''; }
       if (lbCount) lbCount.textContent = (current + 1) + ' / ' + list.length;
       lbPrev.hidden = lbNext.hidden = list.length < 2;
     }
