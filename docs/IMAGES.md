@@ -49,8 +49,6 @@ these they show the lily artwork, so upload them or ask for the cards to be remo
 
 | File name | Category |
 | --- | --- |
-| `gallery-confirmation-pink-table.jpg` | Confirmations |
-| `gallery-long-table-pink-sashes.jpg` | Confirmations |
 
 ## Adding more photos later
 
