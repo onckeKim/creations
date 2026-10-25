@@ -109,11 +109,9 @@ Footer column titles are `h3` on every page.
 
 Rules: describe what is actually in the photo, mention the service and Creations where true, add the town when known, keep it under about 125 characters, never stuff keywords into a photo that does not show them.
 
-Already applied to the three real photos:
+Examples of descriptive alt text already applied to real photos:
 
 - `gallery-blue-goblet-tablescape.jpg`: "Wedding decor by Creations: a long wooden table styled with blue crystal goblets, beaded charger plates, floral napkins, eucalyptus and pillar candles, with white Chiavari chairs"
-- `gallery-confirmation-pink-table.jpg`: "Confirmation decor by Creations in Wellington: a celebration table with soft pink organza runner and chair sashes, a wooden cross favour, tall glass vases of roses and woven placemats"
-- `gallery-long-table-pink-sashes.jpg`: "Event decor by Creations: a long wooden banquet table dressed with pink organza and white cross-back chairs tied with pink sashes, set beneath an arched doorway"
 
 Suggested patterns when you replace the stock photos with your own:
 
