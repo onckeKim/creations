@@ -30,7 +30,6 @@ Pick wide, uncluttered, well-lit shots. Text is placed over the left side, so ke
 | `service-kiddies-party.jpg` | Kiddies Party Decor |
 | `service-matric-ball.jpg` | Matric Balls |
 | `service-confirmation.jpg` | Confirmations |
-| `service-corporate.jpg` | Corporate Events |
 | `service-catering.jpg` | Catering Services |
 
 ## Gallery cards (any orientation, at least 1200 px on the long side)
@@ -43,9 +42,6 @@ Pick wide, uncluttered, well-lit shots. Text is placed over the left side, so ke
 | `gallery-matric-01.jpg` | Matric Balls | Ballroom (also on the homepage) |
 | `gallery-matric-02.jpg` | Matric Balls | Photo wall |
 | `gallery-matric-03.jpg` | Matric Balls | Grand finale |
-| `gallery-corporate-01.jpg` | Corporate Events | Year-end function |
-| `gallery-corporate-02.jpg` | Corporate Events | Product launch |
-| `gallery-corporate-03.jpg` | Corporate Events | Client dinner |
 | `gallery-kiddies-balloons.jpg` | Kiddies Parties | Balloon backdrop |
 
 Two more gallery cards are already waiting for photos with no stock image behind them. Until you upload
@@ -76,3 +72,5 @@ Confirmation and matric uploads: `service-confirmation.jpg`, `gallery-confirmati
 `gallery-confirmation-god-bless-arch.jpg`, `gallery-confirmation-tea-table.jpg`, `gallery-matric-04.jpg`.
 
 Founder portrait: `about-leandie.jpg` (About page and homepage About section).
+
+Corporate: there are no corporate photos yet, so the Corporate filter and gallery cards were removed. `service-corporate.jpg` reuses the formal dinner setup photo. To bring the gallery category back, add a `data-category="corporate"` card and the `corporate` filter chip in `gallery.html`.
