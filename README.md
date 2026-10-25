@@ -31,12 +31,12 @@ favicon.svg, site.webmanifest, robots.txt, sitemap.xml
 
 | Item | Where | Notes |
 | --- | --- | --- |
-| **Photos** | `index.html`, `gallery.html`, `services.html` (`images.unsplash.com` URLs) | Stock placeholders. Real photos go in the gallery: add a `masonry__item` card in `gallery.html` with the right `data-category`. Replace with Creations' own portfolio photos, keeping the `alt` text descriptive. If a photo fails to load the on-brand lily artwork is shown instead. |
+| **Photos** | Every page; see `docs/IMAGES.md` | Each stock photo is wired to a file name in `assets/img/`. Upload a photo with that exact name and it replaces the stock one automatically. Real photos go in the gallery: add a `masonry__item` card in `gallery.html` with the right `data-category`. Replace with Creations' own portfolio photos, keeping the `alt` text descriptive. If a photo fails to load the on-brand lily artwork is shown instead. |
 | **Contact form endpoint** | `contact.html`, form `action="https://formspree.io/f/mrpbbarl"` | Connected to Formspree. Submissions go to the email registered on that form; the first submission needs a one-time confirmation from Formspree. If the endpoint is ever replaced with a placeholder, the form falls back to opening WhatsApp. |
 | **Phone / WhatsApp** | `083 991 7808` and `wa.me/27839917808` | Taken from the business card. Change in `index.html` and `WHATSAPP` in `main.js` if needed. |
 | **Facebook page** | `facebook.com/creationscreated` | From the business card handle. |
 | **Email address** | Not shown | The card lists no email, so none is published. Add one in the contact card and footer if wanted. |
-| **Domain** | `https://www.obcreations.site/` | Used for canonical, Open Graph, sitemap and structured data. Update if the domain changes. |
+| **Domain** | `https://www.obcreations.site/` | Used for canonical, Open Graph, sitemap and structured data. DNS and GitHub steps are in `docs/DOMAIN.md`. |
 | **Address / map** | Contact section, JSON-LD `geo` | Currently centred on Wellington town. Replace the map `src` with the exact Google Maps embed for the studio if desired. |
 | **Opening hours** | Contact section + JSON-LD | Placeholder hours (Mon–Fri 08:30–17:00, Sat 09:00–13:00). |
 | **About photo** | `index.html` and `about.html`, About/Our Story sections | The framed image is a placeholder (the lily artwork). Replace its `src` with a warm, professional photo of the family and team, and update the caption. |

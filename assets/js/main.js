@@ -16,6 +16,13 @@
   // layout never shows a broken image.
   $$('img[data-fallback]').forEach(function (img) {
     img.addEventListener('error', function () {
+      // 1) your photo is not uploaded yet: show the stock photo it replaces
+      if (img.dataset.stock && !img.dataset.stockTried) {
+        img.dataset.stockTried = '1';
+        img.src = img.dataset.stock;
+        return;
+      }
+      // 2) stock photo unavailable too: show the on-brand lily artwork
       if (img.dataset.fallbackApplied) return;
       img.dataset.fallbackApplied = '1';
       var picture = img.closest('picture');
