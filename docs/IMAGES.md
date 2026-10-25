@@ -61,3 +61,10 @@ these they show the lily artwork, so upload them or ask for the cards to be remo
 Name new gallery photos `gallery-[category]-[what-it-shows].jpg`, for example
 `gallery-wedding-ceremony-arch-paarl.jpg`, then ask for a new card to be added. Descriptive names help Google.
 See `docs/SEO.md` for the alt text patterns.
+
+## Already uploaded
+
+These slots now use your own photos (no stock fallback): `gallery-wedding-01.jpg`, `gallery-matric-01.jpg`,
+`service-matric-ball.jpg`, `service-catering.jpg`, plus two new Catering gallery cards
+(`gallery-catering-canape-boxes.jpg`, `gallery-catering-grazing-platter.jpg`). Photos from the earlier upload are
+listed in `gallery.html`.
