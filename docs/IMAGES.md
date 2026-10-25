@@ -71,3 +71,5 @@ These slots now use your own photos (no stock fallback): `gallery-wedding-01.jpg
 Kiddies party uploads: `service-kiddies-party.jpg`, `gallery-kiddies-unicorn-cake.jpg`, `gallery-kiddies-dino-cake.jpg`,
 `gallery-kiddies-dino-invitations.jpg`, `gallery-kiddies-dino-party-bags.jpg`. Photos from the earlier upload are
 listed in `gallery.html`.
+
+Founder portrait: `about-leandie.jpg` (About page and homepage About section).
