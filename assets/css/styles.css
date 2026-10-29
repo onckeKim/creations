@@ -422,6 +422,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .review footer span { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage-deep); }
 @media (min-width: 700px) { .reviews { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1000px) { .reviews { grid-template-columns: repeat(3, 1fr); } }
+.reviews--long { align-items: start; }
+.review--long blockquote p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 0.9rem; }
+.review--long blockquote p:last-of-type { margin-bottom: 1.4rem; }
 
 /* ---------- Services page ------------------------------------------- */
 .svc-index { background: var(--white); border-bottom: 1px solid var(--line); }
