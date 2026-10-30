@@ -422,7 +422,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .review footer span { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage-deep); }
 @media (min-width: 700px) { .reviews { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1000px) { .reviews { grid-template-columns: repeat(3, 1fr); } }
-.reviews--long { align-items: start; }
+.reviews--long { display: block; column-gap: 1.5rem; }
+.reviews--long .review { break-inside: avoid; margin-bottom: 1.5rem; }
+@media (min-width: 700px) { .reviews--long { columns: 2; } }
+@media (min-width: 1000px) { .reviews--long { columns: 3; } }
 .review--long blockquote p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 0.9rem; }
 .review--long blockquote p:last-of-type { margin-bottom: 1.4rem; }
 
