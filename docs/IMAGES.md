@@ -67,7 +67,8 @@ Kiddies party uploads: `service-kiddies-party.jpg`, `gallery-kiddies-unicorn-cak
 listed in `gallery.html`.
 
 Confirmation and matric uploads: `service-confirmation.jpg`, `gallery-confirmation-balloon-backdrop.jpg`, `gallery-confirmation-fairy-lights.jpg`,
-`gallery-confirmation-god-bless-arch.jpg`, `gallery-confirmation-tea-table.jpg`, `gallery-matric-04.jpg`.
+`gallery-confirmation-tea-table.jpg`, `gallery-matric-04.jpg`.
+Baptism upload: `gallery-baptism-blessing-arch.jpg` (filter `baptisms`).
 
 Founder portrait: `about-leandie.jpg` (About page and homepage About section).
 
