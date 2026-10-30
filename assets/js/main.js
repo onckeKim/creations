@@ -405,6 +405,68 @@
       ticking = true;
       window.requestAnimationFrame(function () { ticking = false; update(); });
     }, { passive: true });
+    /* Automatic sliding: advances every few seconds, stops while the visitor
+       is hovering, touching or focused on the slider, while it is off screen
+       or the tab is hidden, and never runs for reduced-motion users. A pause
+       button lets visitors stop it for good. */
+    var interval = parseInt(slider.getAttribute('data-autoplay'), 10) || 0;
+    var toggle = $('[data-slider-toggle]', slider);
+    var autoTimer = null;
+    var userPaused = false, hovering = false, focused = false, touching = false, onScreen = false;
+    var autoEnabled = interval > 0 && !prefersReducedMotion && !!toggle;
+
+    function shouldRun() {
+      return autoEnabled && !userPaused && !hovering && !focused && !touching && onScreen && !document.hidden;
+    }
+    function schedule() {
+      window.clearTimeout(autoTimer);
+      if (!shouldRun()) return;
+      autoTimer = window.setTimeout(function () {
+        var i = current();
+        goTo(i >= stops.length - 1 ? 0 : i + 1);
+        schedule();
+      }, interval);
+    }
+    if (autoEnabled) {
+      toggle.hidden = false;
+      track.setAttribute('aria-live', 'off');
+      toggle.addEventListener('click', function () {
+        userPaused = !userPaused;
+        toggle.classList.toggle('is-paused', userPaused);
+        toggle.setAttribute('aria-label', userPaused ? 'Play automatic sliding' : 'Pause automatic sliding');
+        track.setAttribute('aria-live', userPaused ? 'polite' : 'off');
+        schedule();
+      });
+      // Mouse hover only (touch screens report a sticky hover after a tap)
+      slider.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; schedule(); } });
+      slider.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; schedule(); } });
+      // Keyboard focus only, so clicking a button does not freeze the timer
+      slider.addEventListener('focusin', function (e) {
+        var kb = false;
+        try { kb = e.target.matches(':focus-visible'); } catch (err) { kb = false; }
+        focused = kb; schedule();
+      });
+      slider.addEventListener('focusout', function () { focused = false; schedule(); });
+      track.addEventListener('touchstart', function () { touching = true; schedule(); }, { passive: true });
+      track.addEventListener('touchend', function () { touching = false; schedule(); }, { passive: true });
+      track.addEventListener('touchcancel', function () { touching = false; schedule(); }, { passive: true });
+      document.addEventListener('visibilitychange', schedule);
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          onScreen = entries[0].isIntersecting;
+          schedule();
+        }, { threshold: 0.4 }).observe(slider);
+      } else {
+        onScreen = true;
+        schedule();
+      }
+      // Any manual move restarts the countdown so it never jumps right after a swipe
+      prev.addEventListener('click', schedule);
+      next.addEventListener('click', schedule);
+      dotsWrap.addEventListener('click', schedule);
+      track.addEventListener('keydown', schedule);
+    }
+
     window.addEventListener('resize', function () { measure(); update(); });
     window.addEventListener('load', function () { measure(); update(); });
     measure();
