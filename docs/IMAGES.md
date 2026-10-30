@@ -36,7 +36,6 @@ Pick wide, uncluttered, well-lit shots. Text is placed over the left side, so ke
 
 | File name | Category | Replaces |
 | --- | --- | --- |
-| `gallery-wedding-01.jpg` | Weddings | Garden reception |
 | `gallery-wedding-02.jpg` | Weddings | Bridal bouquet (also on the homepage) |
 | `gallery-wedding-03.jpg` | Weddings | Candlelit tablescape |
 | `gallery-matric-01.jpg` | Matric Balls | Ballroom (also on the homepage) |
@@ -58,7 +57,7 @@ See `docs/SEO.md` for the alt text patterns.
 
 ## Already uploaded
 
-These slots now use your own photos (no stock fallback): `gallery-wedding-01.jpg`, `gallery-matric-01.jpg`,
+These slots now use your own photos (no stock fallback): `gallery-matric-01.jpg`,
 `gallery-wedding-02.jpg`, `gallery-wedding-03.jpg`, `gallery-wedding-04.jpg`, `gallery-wedding-05.jpg`, `gallery-wedding-06.jpg`, `hero-services.jpg`, `hero-about.jpg`, `gallery-matric-02.jpg`, `gallery-matric-03.jpg`,
 `service-wedding.jpg`, `service-matric-ball.jpg`, `service-catering.jpg`, `hero-gallery.jpg`, plus two new Catering gallery cards
 (`gallery-catering-canape-boxes.jpg`, `gallery-catering-grazing-platter.jpg`, `gallery-catering-dessert-table.jpg`, `gallery-catering-sweet-savoury-spread.jpg`).
@@ -66,7 +65,7 @@ Kiddies party uploads: `service-kiddies-party.jpg`, `gallery-kiddies-unicorn-cak
 `gallery-kiddies-dino-invitations.jpg`, `gallery-kiddies-dino-party-bags.jpg`. Photos from the earlier upload are
 listed in `gallery.html`.
 
-Confirmation and matric uploads: `service-confirmation.jpg`, `gallery-confirmation-balloon-backdrop.jpg`, `gallery-confirmation-fairy-lights.jpg`,
+Confirmation and matric uploads: `service-confirmation.jpg`, `gallery-confirmation-balloon-backdrop.jpg`, `gallery-matric-05.jpg`,
 `gallery-confirmation-tea-table.jpg`, `gallery-matric-04.jpg`.
 Baptism upload: `gallery-baptism-blessing-arch.jpg` (filter `baptisms`).
 
