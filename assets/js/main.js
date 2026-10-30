@@ -322,6 +322,95 @@
     });
   }
 
+  /* ---------- Testimonial slider: swipe, arrows and dots ----------- */
+  $$('[data-slider]').forEach(function (slider) {
+    var track = $('ul', slider);
+    var cards = $$('li', track);
+    var prev = $('[data-slider-prev]', slider);
+    var next = $('[data-slider-next]', slider);
+    var dotsWrap = $('[data-slider-dots]', slider);
+    if (!track || cards.length < 2) return;
+    track.style.position = 'relative';
+
+    var stops = [];
+    var dots = [];
+
+    // Scroll positions the track can actually rest on: each card's left edge
+    // until the end of the track is reached, then the very end.
+    function measure() {
+      var max = track.scrollWidth - track.clientWidth;
+      var first = cards[0].offsetLeft;
+      stops = [];
+      cards.forEach(function (card) {
+        var x = card.offsetLeft - first;
+        if (x < max - 4) stops.push(x);
+      });
+      stops.push(Math.max(0, max));
+      if (dots.length !== stops.length) {
+        dotsWrap.innerHTML = '';
+        dots = stops.map(function (x, i) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-label', 'Go to review ' + (i + 1) + ' of ' + stops.length);
+          b.addEventListener('click', function () { goTo(i); });
+          dotsWrap.appendChild(b);
+          return b;
+        });
+      }
+    }
+    function current() {
+      var best = 0, bestDist = Infinity;
+      stops.forEach(function (x, i) {
+        var d = Math.abs(x - track.scrollLeft);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+      return best;
+    }
+    // Fit the track's height to the cards on screen so a short review is
+    // not followed by a gap the size of the longest one.
+    function fitHeight() {
+      var box = track.getBoundingClientRect();
+      var tallest = 0;
+      cards.forEach(function (card) {
+        var r = card.getBoundingClientRect();
+        var shown = Math.min(r.right, box.right) - Math.max(r.left, box.left);
+        if (shown > r.width * 0.4) tallest = Math.max(tallest, card.offsetHeight);
+      });
+      if (tallest) track.style.height = (tallest + 40) + 'px';
+    }
+    function update() {
+      fitHeight();
+      var i = current();
+      dots.forEach(function (d, n) {
+        d.classList.toggle('is-active', n === i);
+        if (n === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+      });
+      prev.disabled = i === 0;
+      next.disabled = i === stops.length - 1;
+    }
+    function goTo(i) {
+      i = Math.max(0, Math.min(stops.length - 1, i));
+      track.scrollTo({ left: stops[i], behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    }
+
+    prev.addEventListener('click', function () { goTo(current() - 1); });
+    next.addEventListener('click', function () { goTo(current() + 1); });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current() + 1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current() - 1); }
+    });
+    var ticking = false;
+    track.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function () { ticking = false; update(); });
+    }, { passive: true });
+    window.addEventListener('resize', function () { measure(); update(); });
+    window.addEventListener('load', function () { measure(); update(); });
+    measure();
+    update();
+  });
+
   /* ---------- FAQ accordion: one item open at a time ---------------- */
   $$('[data-accordion]').forEach(function (acc) {
     var items = $$('details', acc);
